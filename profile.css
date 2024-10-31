@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  background: linear-gradient(
+    135deg, 
+    #b3aaeb 0%, 
+    #6d63bc 100%);
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+}
+
+.profile-container {
+  width: 80%;
+  max-width: 500px; 
+  margin: 0 auto;
+  background-color: #fff; 
+  padding: 20px;
+  border-radius: 15px; 
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); /* Add a shadow for depth */
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer; /* Make the image clickable */
+}
+
+.profile-header input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+.account-settings,.discovery-settings {
+  margin-bottom: 20px;
+}
+
+.account-settings h3,
+.discovery-settings h3 {
+    text-align: center; 
+    color: #333; 
+}
+
+.setting {
+  margin-bottom: 10px;
+}
+
+.setting label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.setting input[type="range"] {
+  width: 100%;
+}
+
+input[type="text"], 
+input[type="tel"], 
+input[type="date"], 
+input[type="email"] {
+    background-color: #eee;
+    border-radius: 10px;
+    border: none;
+    padding: 15px 15px;
+    margin: 13px 0;
+    width: 100%; /* Adjusted width to ensure proper alignment */
+}

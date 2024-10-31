@@ -18,3 +18,5 @@ loginForm.addEventListener("submit", (event) => {
   // Redirect to dashboard.html
   window.location.href = "dashboard.html";
 });
+
+

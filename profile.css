@@ -68,3 +68,32 @@ input[type="email"] {
     margin: 13px 0;
     width: 100%; 
 }
+.button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px; 
+  border: 2px solid #b3aaeb; 
+  background-color: #b3aaeb; 
+  color: white;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.button-container button:hover {
+  background-color: white;
+  color: black;
+}
+
+#edit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+

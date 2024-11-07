@@ -1,3 +1,4 @@
+// Initialize Swiper slider
 var TrandingSlider = new Swiper('.tranding-slider', {
   effect: 'coverflow',
   grabCursor: true,
@@ -5,18 +6,18 @@ var TrandingSlider = new Swiper('.tranding-slider', {
   loop: true,
   slidesPerView: 'auto',
   coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 2.5,
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2.5,
   },
   pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
+      el: '.swiper-pagination',
+      clickable: true,
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
   }
 });
 
@@ -46,13 +47,26 @@ function toggleLike(button) {
   }
 }
 
-// Add event listeners for all like buttons after the Swiper initializes
+// Function to toggle overlay visibility on slide click
+function toggleOverlay(slide) {
+  const overlay = slide.querySelector('.overlay');
+  overlay.classList.toggle('visible');
+}
+
+// Prevent overlay toggle when like or dislike button is clicked
+function toggleDislike(event) {
+  event.stopPropagation(); // Prevent overlay toggle
+  // Add dislike functionality here if needed
+}
+
+// Add event listeners for all like buttons after the DOM loads
 document.addEventListener('DOMContentLoaded', function () {
   // Get all like buttons inside Swiper slides
   const likeButtons = document.querySelectorAll('.like-btn');
 
   likeButtons.forEach(button => {
-      button.addEventListener('click', function() {
+      button.addEventListener('click', function(event) {
+          event.stopPropagation(); // Prevent overlay toggle
           toggleLike(this); // Call the function when a like button is clicked
       });
   });

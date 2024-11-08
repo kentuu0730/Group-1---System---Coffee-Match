@@ -289,78 +289,7 @@ input {
   transform: translateX(20%);
 }
 
-@media (min-width: 430px) {
-  h1.title {
-    font-size: 5vw; 
-  }
 
-  p {
-    font-size: 1rem; 
-  }
-
-  .container {
-    width: 100%; 
-    min-height: 350px; 
-    padding: 15px; 
-  }
-
-  .form-container {
-    padding: 5 20px;
-  }
-
-  button {
-    font-size: 0.9rem; 
-    padding: 12px 30px; 
-    margin-top: 20px;
-  }
-
-  input {
-    font-size: 1rem; 
-    padding: 10px;
-  }
-
-  .overlay-panel {
-    padding: 0 10px; 
-  }
-
-
-  .content {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align checkbox and text to the left */
-    width: 100%;
-    margin-top: 10px; /* Add margin to prevent overlap with other elements */
-  }
-
-  /* Keep checkbox and label on the same line */
-  .content .checkbox {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 14px; /* Make sure the label text fits */
-    width: 100%; /* Ensure it takes up full width */
-  }
-
-  .content input {
-    width: 14px; /* Adjust size of checkbox */
-    height: 14px; /* Smaller checkbox size for mobile */
-    margin-right: 5px; /* Add space between checkbox and label */
-  }
-
-  /* Adjust label font size to make it smaller and fit better on mobile */
-  .content label {
-    font-size: 10px;
-    margin-left: 2px; /* Space between checkbox and label */
-  }
-
-  /* Move 'forgot password' below the checkbox */
-  .content a {
-    font-size: 12px; /* Make font smaller */
-    margin-left: 0; /* Remove extra space */
-    margin-top: 5px; /* Add top margin to separate it from the checkbox */
-    align-self: flex-start; /* Align the link to the left */
-  }
-}
 
 
 

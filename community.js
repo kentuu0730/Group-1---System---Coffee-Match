@@ -57,7 +57,6 @@ const createPost = (text, imageFile) => {
     postActions.appendChild(likeButton);
     postActions.appendChild(commentButton);
     postActions.appendChild(shareButton);
-  
     newPost.appendChild(postHeader);
     newPost.appendChild(postContent);
     newPost.appendChild(postActions);

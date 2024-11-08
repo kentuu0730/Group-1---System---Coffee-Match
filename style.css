@@ -6,10 +6,7 @@
 
 body {
   display: flex;
-  background: linear-gradient(
-    135deg, 
-    #b3aaeb 0%, 
-    #6d63bc 100%);
+  background: linear-gradient(135deg, #b3aaeb 0%, #6d63bc 100%);
   background-color: #f6f5f7;
   justify-content: center;
   align-items: center;
@@ -22,11 +19,12 @@ body {
 h1 {
   font-weight: 700;
   letter-spacing: -1.5px;
-  margin: 0 0 15px;
+  margin: 0;
   margin-bottom: 15px;
 }
 
 h1.title {
+  font-size: 4vw; /* Use viewport width for responsiveness */
   font-size: 45px;
   line-height: 45px;
   margin: 0;
@@ -34,6 +32,7 @@ h1.title {
 }
 
 p {
+  font-size: 1rem; /* Use rem for scaling text */
   font-size: 14px;
   font-weight: 100;
   line-height: 20px;
@@ -53,10 +52,6 @@ a {
   text-decoration: none;
   margin: 15px 0;
   transition: 0.3s ease-in-out;
-}
-
-a:hover {
-  color: #4bb6b7;
 }
 
 .content {
@@ -88,9 +83,10 @@ a:hover {
 button {
   position: relative;
   border-radius: 20px;
-  border: 1px solid #968aec;
-  background-color: #968aec;
+  border: 1px solid #b3aaeb;
+  background-color: #b3aaeb;
   color: #fff;
+  font-size: 1.5rem; /* Scalable font size */
   font-size: 15px;
   font-weight: 700;
   margin: 10px;
@@ -163,7 +159,7 @@ input {
 }
 
 .container {
-  background-color: #fff;
+  background-color: #b3aaeb;
   border-radius: 25px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -234,10 +230,11 @@ input {
 }
 
 .overlay {
+  background-image: url('image/image.gif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  color: #ffffff;
+  color: #fff;
   position: relative;
   left: -100%;
   height: 100%;
@@ -253,10 +250,7 @@ input {
   right: 0;
   top: 0;
   bottom: 0;
-  background-image: radial-gradient(
-    #c4c2f3 5%, 
-    #b3aaeb 15%, 
-    #968aec 60%);
+  background: linear-gradient(135deg, #b3aaeb 0%, #6d63bc 100%);
 }
 
 .container.right-panel-active .overlay {
@@ -295,22 +289,80 @@ input {
   transform: translateX(20%);
 }
 
-.social-container {
-  margin: 20px 0;
+@media (min-width: 430px) {
+  h1.title {
+    font-size: 5vw; 
+  }
+
+  p {
+    font-size: 1rem; 
+  }
+
+  .container {
+    width: 100%; 
+    min-height: 350px; 
+    padding: 15px; 
+  }
+
+  .form-container {
+    padding: 5 20px;
+  }
+
+  button {
+    font-size: 0.9rem; 
+    padding: 12px 30px; 
+    margin-top: 20px;
+  }
+
+  input {
+    font-size: 1rem; 
+    padding: 10px;
+  }
+
+  .overlay-panel {
+    padding: 0 10px; 
+  }
+
+
+  .content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align checkbox and text to the left */
+    width: 100%;
+    margin-top: 10px; /* Add margin to prevent overlap with other elements */
+  }
+
+  /* Keep checkbox and label on the same line */
+  .content .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px; /* Make sure the label text fits */
+    width: 100%; /* Ensure it takes up full width */
+  }
+
+  .content input {
+    width: 14px; /* Adjust size of checkbox */
+    height: 14px; /* Smaller checkbox size for mobile */
+    margin-right: 5px; /* Add space between checkbox and label */
+  }
+
+  /* Adjust label font size to make it smaller and fit better on mobile */
+  .content label {
+    font-size: 10px;
+    margin-left: 2px; /* Space between checkbox and label */
+  }
+
+  /* Move 'forgot password' below the checkbox */
+  .content a {
+    font-size: 12px; /* Make font smaller */
+    margin-left: 0; /* Remove extra space */
+    margin-top: 5px; /* Add top margin to separate it from the checkbox */
+    align-self: flex-start; /* Align the link to the left */
+  }
 }
 
-.social-container a {
-  border: 1px solid #c4c2f3;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  height: 40px;
-  width: 40px;
-  transition: 0.3s ease-in-out;
-}
 
-.social-container a:hover {
-  border: 1px solid #c4c2f3;
-}
+
+
+

@@ -1,19 +1,31 @@
-const registerButton = document.getElementById("showRegister");
-const loginButton = document.getElementById("showLogin");
-const container = document.getElementById("container");
-const loginForm = document.getElementById("loginForm");
+class AuthUI {
+  constructor(containerId, loginFormId, registerButtonId, loginButtonId) {
+    this.container = document.getElementById(containerId);
+    this.loginForm = document.getElementById(loginFormId);
+    this.registerButton = document.getElementById(registerButtonId);
+    this.loginButton = document.getElementById(loginButtonId);
+    this._bindEvents();
+  }
 
-registerButton.addEventListener("click", () => {
-  container.classList.add("right-panel-active");
-});
+  _bindEvents() {
+    this.registerButton.addEventListener("click", () => this.showRegister());
+    this.loginButton.addEventListener("click", () => this.showLogin());
+    this.loginForm.addEventListener("submit", (event) => this.handleLoginSubmit(event));
+  }
 
-loginButton.addEventListener("click", () => {
-  container.classList.remove("right-panel-active");
-});
+  showRegister() {
+    this.container.classList.add("right-panel-active");
+  }
 
-loginForm.addEventListener("submit", (event) => {
-  event.preventDefault(); 
-  window.location.href = "dashboard.html";
-});
+  showLogin() {
+    this.container.classList.remove("right-panel-active");
+  }
+
+  handleLoginSubmit(event) {
+    event.preventDefault();
+    window.location.href = "dashboard.html";
+  }
+}
 
 
+const authUI = new AuthUI("container", "loginForm", "showRegister", "showLogin");

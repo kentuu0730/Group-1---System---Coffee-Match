@@ -12,14 +12,21 @@
   <div class="container">
     <header>
       <div class="logo">
-        <h2>Community</h2>
+        <h2>Cafe Nest</h2>
       </div>
     </header>
 
     <!-- Post Submission Form -->
     <div class="post-form">
       <textarea id="post-text" placeholder="What's on your mind?" rows="4"></textarea>
-      <input type="file" id="post-image" accept="image/*">
+      
+      <!-- File input with icon -->
+      <label class="file-upload">
+        <ion-icon name="image-outline"></ion-icon>
+        <input type="file" id="post-image" accept="image/*" hidden>
+        Choose Image
+      </label>
+
       <button id="submit-post">Post</button>
     </div>
 

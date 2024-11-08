@@ -1,117 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
 /* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fafafa;
-    color: #333;
-  }
-  
-  /* Container */
-  .container {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #b3aaeb; 
+    color: #000000;
+}
+
+/* Container */
+.container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  header {
+}
+
+/* Centered Header */
+header {
     display: flex;
+    justify-content: center;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 15px 0;
     border-bottom: 1px solid #ddd;
-  }
-  
-  header .logo h2 {
-    font-size: 24px;
+}
+
+header .logo h2 {
+    font-size: 50px;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
     text-transform: uppercase;
-  }
-  
-  /* Post Form */
-  .post-form {
+    
+}
+header .logo {
+  text-align: center; /* Center text within .logo */
+  width: 100%; /* Make the logo take full width of the header */
+}
+
+header .icon {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+header .icon:hover {
+    color: #007bb5;
+}
+
+/* Post Form */
+.post-form {
     margin-top: 20px;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  textarea {
+}
+
+textarea {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border-radius: 8px;
     border: 1px solid #ddd;
     margin-bottom: 10px;
-  }
-  
-  input[type="file"] {
-    margin-bottom: 10px;
-  }
-  
-  button {
+}
+
+/* Custom File Upload Button */
+.file-upload {
+    display: flex;
+    align-items: center;
+    background-color: #0095f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.file-upload ion-icon {
+    font-size: 20px;
+}
+
+.file-upload:hover {
+    background-color: #007bb5;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
     background-color: #0095f6;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #007bb5;
-  }
-  
-  /* Post Feed */
-  .post-feed {
+}
+
+/* Post Feed */
+.post-feed {
     margin-top: 30px;
-  }
-  
-  .post {
+}
+
+.post {
     padding: 15px;
     margin-bottom: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .post-header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-  }
-  
-  .user-avatar {
-    width: 40px;
-    height: 40px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-right: 10px;
-  }
-  
-  .user-name {
+}
+
+.user-name {
     font-weight: bold;
-  }
-  
-  .post-image img {
+    color: #333;
+}
+
+.post-image img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-top: 10px;
-  }
-  
-  .post-actions {
+}
+
+/* Post Actions */
+.post-actions {
     margin-top: 10px;
     display: flex;
     gap: 15px;
-  }
-  
-  button {
+    color: #333;
+}
+
+.post-actions button {
     background: none;
     border: none;
     color: #007BFF;
@@ -120,9 +163,28 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
-  }
-  
-  button:hover {
+}
+
+.post-actions button:hover {
     color: #0056b3;
-  }
-  
+}
+
+/* Customize scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0095f6;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #007bb5;
+}

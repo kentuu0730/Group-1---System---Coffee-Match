@@ -56,7 +56,15 @@ function toggleOverlay(slide) {
 // Prevent overlay toggle when like or dislike button is clicked
 function toggleDislike(event) {
   event.stopPropagation(); // Prevent overlay toggle
-  // Add dislike functionality here if needed
+
+  // Find the closest swiper-slide to the clicked dislike button
+  const slide = event.target.closest('.swiper-slide');
+
+  // Remove the entire slide from the DOM
+  slide.remove();
+
+  TrandingSlider.update();
+
 }
 
 // Add event listeners for all like buttons after the DOM loads
@@ -70,4 +78,14 @@ document.addEventListener('DOMContentLoaded', function () {
           toggleLike(this); // Call the function when a like button is clicked
       });
   });
+
+  // Get all dislike buttons inside Swiper slides and add event listeners
+  const dislikeButtons = document.querySelectorAll('.dislike-btn');
+  dislikeButtons.forEach(button => {
+      button.addEventListener('click', function(event) {
+          toggleDislike(event); // Call the function when a dislike button is clicked
+      });
+  });
 });
+
+

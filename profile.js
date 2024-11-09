@@ -17,7 +17,7 @@ document.getElementById('save-btn').addEventListener('click', () => {
   document.getElementById('edit-btn').disabled = false;
   document.getElementById('save-btn').disabled = true;
 });
-
+  
 document.getElementById('edit-btn').addEventListener('click', () => {
   document.getElementById('name').disabled = false;
   document.getElementById('phone').disabled = false;
@@ -29,21 +29,18 @@ document.getElementById('edit-btn').addEventListener('click', () => {
 });
 
 window.addEventListener('load', () => {
-  if (localStorage.getItem('profileName')) {
-      document.getElementById('name').value = localStorage.getItem('profileName');
-      document.getElementById('phone').value = localStorage.getItem('profilePhone');
-      document.getElementById('dob').value = localStorage.getItem('profileDob');
-      document.getElementById('email').value = localStorage.getItem('profileEmail');
+  const name = localStorage.getItem('profileName');
+  const email = localStorage.getItem('profileEmail');
+  const phone = localStorage.getItem('profilePhone');
+  const dob = localStorage.getItem('profileDob');
 
-      document.getElementById('name').disabled = true;
-      document.getElementById('phone').disabled = true;
-      document.getElementById('dob').disabled = true;
-      document.getElementById('email').disabled = true;
-
-      document.getElementById('edit-btn').disabled = false;
-      document.getElementById('save-btn').disabled = true;
-  } else {
-      document.getElementById('edit-btn').disabled = true;
-      document.getElementById('save-btn').disabled = false;
+  if (name && email && phone && dob) {
+    document.getElementById('name').value = name;
+    document.getElementById('email').value = email;
+    document.getElementById('phone').value = phone;
+    document.getElementById('dob').value = dob;
   }
 });
+
+
+window.addEventListener('load', loadProfileData);

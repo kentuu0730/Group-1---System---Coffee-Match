@@ -57,6 +57,53 @@ app.post('/login', (req, res) => {
     });
 });
 
+app.get('/profile', (req, res) => {
+    const email = req.query.email;
+
+    const query = 'SELECT name, email, phone, dob FROM users_reg WHERE email = ?';
+    db.query(query, [email], (err, results) => {
+        if (err) {
+            console.error('Error retrieving profile:', err);
+            return res.status(500).send('Server error');
+        }
+
+        if (results.length === 0) {
+            return res.status(404).send('User not found');
+        }
+
+        res.status(200).json(results[0]);
+    });
+});
+
+app.post('/updateProfile', (req, res) => {
+    const { email, phone, dob } = req.body;
+  
+    const query = 'UPDATE users_reg SET phone = ?, dob = ? WHERE email = ?';
+    db.query(query, [phone, dob, email], (err) => {
+      if (err) {
+        console.error('Error updating profile:', err);
+        return res.status(500).send('Server error');
+      }
+  
+      res.status(200).send('Profile updated successfully');
+    });
+});
+
+const loadProfileData = async () => {
+    try {
+      const email = localStorage.getItem('profileEmail');
+      const response = await fetch(`http://127.0.0.1:3000/profile?email=${email}`);
+      
+      if (!response.ok) throw new Error('Failed to fetch profile');
+  
+      const profileData = await response.json();
+      document.getElementById('name').value = profileData.name;
+      document.getElementById('email').value = profileData.email;
+    } catch (error) {
+      console.error('Error loading profile data:', error);
+    }
+  };
+  
 
 app.listen(port, () => {
   console.log(`Server running on http://127.0.0.1:${port}`);

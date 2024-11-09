@@ -24,7 +24,7 @@ h1 {
 }
 
 h1.title {
-  font-size: 4vw; /* Use viewport width for responsiveness */
+  font-size: 4vw; 
   font-size: 45px;
   line-height: 45px;
   margin: 0;
@@ -52,32 +52,6 @@ a {
   text-decoration: none;
   margin: 15px 0;
   transition: 0.3s ease-in-out;
-}
-
-.content {
-  display: flex;
-  width: 100%;
-  height: 50px;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.content .checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content input {
-  accent-color: #333;
-  width: 12px;
-  height: 12px;
-}
-
-.content label {
-  font-size: 14px;
-  user-select: none;
-  padding-left: 5px;
 }
 
 button {
@@ -114,26 +88,26 @@ button.ghost {
   color: #fff;
 }
 
-button.ghost i{
+button.ghost i {
   position: absolute;
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
 
-button.ghost i.register{
+button.ghost i.register {
   right: 70px;
 }
 
-button.ghost i.login{
+button.ghost i.login {
   left: 70px;
 }
 
-button.ghost:hover i.register{
+button.ghost:hover i.register {
   right: 40px;
   opacity: 1;
 }
 
-button.ghost:hover i.login{
+button.ghost:hover i.login {
   left: 40px;
   opacity: 1;
 }
@@ -206,7 +180,6 @@ input {
     opacity: 0;
     z-index: 1;
   }
-
   50%,
   100% {
     opacity: 1;
@@ -288,10 +261,3 @@ input {
 .container.right-panel-active .overlay-right {
   transform: translateX(20%);
 }
-
-
-
-
-
-
-
